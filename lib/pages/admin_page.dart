@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:projetos/custom_widgets/custom_button.dart';
@@ -19,6 +20,13 @@ class _AdminPageState extends State<AdminPage> {
   Widget build(BuildContext context) => Scaffold(
     extendBodyBehindAppBar: true,
     appBar: AppBar(
+      actions: [
+        IconButton(
+            icon: const Icon(Icons.logout, size: 40),
+            color: Colors.white,
+            onPressed: logOut,
+        ),
+      ],
       title: const Text(
           'Editar LinkRapido',
           style: TextStyle(color: Colors.white),
@@ -100,6 +108,10 @@ class _AdminPageState extends State<AdminPage> {
     ),
   );
 
+  void logOut () {
+     FirebaseAuth.instance.signOut();
+    }
+
 
   Stream<List<Button>> readButtons() => FirebaseFirestore.instance
       .collection('button')
@@ -116,4 +128,5 @@ class _AdminPageState extends State<AdminPage> {
     }
     return null;
   }
+
 }

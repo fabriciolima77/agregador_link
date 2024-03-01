@@ -44,7 +44,7 @@ class CriaBotao extends StatelessWidget {
           ),
           Text(hintText,
               style: const TextStyle(
-                fontSize: 20,
+                fontSize: 18,
                 color: Colors.black,)
           ),
           const SizedBox(width: 20)

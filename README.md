@@ -1,16 +1,29 @@
-# projetos
+# Agregador de Links(Linkrapido)
 
-Um agregador de links Web
+Uma aplicação feita em flutter Web para agregar links e exibir em botões clicavéis, onde o usuário
+é redirecionado para o link cadastrado. Utilizando o Firebase como banco de dados o usuário administrador
+consegue cadastrar, editar e excluir os botões do seu site. Feito para a grafica DL Sublimarte.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- [x] Agregar diversos links em apenas um
+- [x] Permite criar, editar e deletar se o usuário estiver autenticado
+- [x] Alta disponibilidade por utilizar recursos do Google(Firebase)
 
-A few resources to get you started if this is your first Flutter project:
+### Como utilizar
+Basta acessar o link do Website App abaixo:
+- [WEBSITE](https://dlsublimarte-linkrapido.web.app/)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 🛠 Tecnologias
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Dart](https://dart.dev/)
+- [Flutter](https://flutter.dev/)
+- [Firebase](https://firebase.google.com/)
+- [intl_phone_field](https://pub.dev/packages/intl_phone_field)
+- [firebase_core](https://pub.dev/packages/firebase_core)
+- [firebase_auth](https://pub.dev/packages/firebase_auth)
+- [cloud_firestore](https://pub.dev/packages/cloud_firestore)
+- [firebase_storage](https://pub.dev/packages/firebase_storage)
+- [file_picker](https://pub.dev/packages/file_picker)

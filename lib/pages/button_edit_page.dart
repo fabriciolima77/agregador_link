@@ -22,7 +22,6 @@ class ButtonEditPage extends StatefulWidget {
 
 class _ButtonEditPageState extends State<ButtonEditPage> {
   final controllerTitle = TextEditingController();
-
   final controllerURL = TextEditingController();
 
   @override
@@ -43,11 +42,13 @@ class _ButtonEditPageState extends State<ButtonEditPage> {
               CampoTexto(
                 controller: controllerTitle,
                 hintText: widget.title,
+                keyBoardType: TextInputType.text,
               ),
               const SizedBox(height: 24),
               CampoTexto(
                 controller: controllerURL,
                 hintText: widget.url,
+                keyBoardType: TextInputType.text,
               ),
               const SizedBox(height: 24),
 

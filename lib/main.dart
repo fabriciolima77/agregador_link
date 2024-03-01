@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
+        fontFamily: 'Lexend',
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFFDC600)),
         primarySwatch: Colors.amber,
         scaffoldBackgroundColor: Colors.black,

@@ -2,9 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:projetos/custom_widgets/custom_button.dart';
 import 'package:projetos/custom_widgets/custom_profile.dart';
-import 'package:projetos/pages/admin_page.dart';
+import 'package:projetos/pages/auth_page.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../models/model_button.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,8 +17,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    /*double alturaTela = MediaQuery.of(context).size.height;*/
     double larguraTela = MediaQuery.of(context).size.width;
     var larguraResponsiva = larguraTela < 800 ?
     larguraTela * 0.9 :
@@ -30,11 +27,14 @@ class _HomePageState extends State<HomePage> {
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
+          title: SizedBox(
+            child: Image.asset('images/linkrapido_logo.png', height: 90, fit: BoxFit.scaleDown,),
+          ),
           actions: [
             IconButton(
                 icon: const Icon(Icons.settings, size: 40),
                 color: Colors.white,
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminPage()))
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AuthPage()))
             ),
           ],
         ),
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
           onPressed: () async {
             String url = button.url;
             if (url.isNotEmpty) {
-              url = 'http://${Uri.encodeFull(url)}';
+              url = 'http://${Uri.encodeFull(url).replaceAll('https://', '').replaceAll('http://', '')}';
             }
             if (await launchUrl(Uri.parse(url))) {
               await launchUrl(Uri.parse(url));

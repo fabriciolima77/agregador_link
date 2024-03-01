@@ -58,11 +58,13 @@ class _CreateButtonPageState extends State<CreateButtonPage> {
               CampoTexto(
                 controller: controllerTitle,
                 hintText: 'Titulo do botão',
+                keyBoardType: TextInputType.text,
               ),
               const SizedBox(height: 24),
               CampoTexto(
                 controller: controllerURL,
                 hintText: 'Link para redirecionamento',
+                keyBoardType: TextInputType.text,
               ),
               const SizedBox(height: 24),
 
