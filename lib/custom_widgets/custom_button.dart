@@ -39,7 +39,7 @@ class CriaBotao extends StatelessWidget {
         children: [
           CircleAvatar(
             backgroundImage: NetworkImage(src),
-            radius: 20,
+            radius: 18,
             backgroundColor: Colors.transparent,
           ),
           Text(hintText,

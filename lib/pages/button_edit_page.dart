@@ -33,48 +33,50 @@ class _ButtonEditPageState extends State<ButtonEditPage> {
         color: Colors.white,
       ),
     ),
-    body: ListView(
-      padding: const EdgeInsets.all(16),
-      children: [
-        Center(
-          child: Column(
-            children: [
-              CampoTexto(
-                controller: controllerTitle,
-                hintText: widget.title,
-                keyBoardType: TextInputType.text,
-              ),
-              const SizedBox(height: 24),
-              CampoTexto(
-                controller: controllerURL,
-                hintText: widget.url,
-                keyBoardType: TextInputType.text,
-              ),
-              const SizedBox(height: 24),
+    body: SingleChildScrollView(
+      child: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          Center(
+            child: Column(
+              children: [
+                CampoTexto(
+                  controller: controllerTitle,
+                  hintText: widget.title,
+                  keyBoardType: TextInputType.text,
+                ),
+                const SizedBox(height: 24),
+                CampoTexto(
+                  controller: controllerURL,
+                  hintText: widget.url,
+                  keyBoardType: TextInputType.text,
+                ),
+                const SizedBox(height: 24),
 
-              const SizedBox(height: 32),
-              CriaBotaoSimples(
-                hintText: 'Salvar',
-                onPressed: () {
-                  final docUser = FirebaseFirestore.instance
-                      .collection('button')
-                      .doc(widget.id);
+                const SizedBox(height: 32),
+                CriaBotaoSimples(
+                  hintText: 'Salvar',
+                  onPressed: () {
+                    final docUser = FirebaseFirestore.instance
+                        .collection('button')
+                        .doc(widget.id);
 
-                  docUser.update({
-                    'title': controllerTitle.text,
-                    'url': controllerURL.text,
-                    'id': widget.id,
-                  });
+                    docUser.update({
+                      'title': controllerTitle.text,
+                      'url': controllerURL.text,
+                      'id': widget.id,
+                    });
 
-                  Navigator.pop(context);
-                },
-                left: 20, top: 10, right: 20, bottom: 10,
+                    Navigator.pop(context);
+                  },
+                  left: 20, top: 10, right: 20, bottom: 10,
 
-              ),
-            ],
-          ),
-        )
-      ],
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     ),
   );
 

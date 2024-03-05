@@ -38,39 +38,41 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-        body: StreamBuilder(
-            stream: readButtons(),
-            builder: (context, snapshot) {
-              if (snapshot.hasError) {
-                return const Center(
-                  child: Text(
-                    'Erro na obtenção de dados :(',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                );
-              } else if (snapshot.hasData) {
-                final buttons = snapshot.data!;
-                return Center(
-                  child: Column(
-                    children: [
-                      const CustomProfile(),
-                      SizedBox(
-                        width: larguraResponsiva,
-                        child: ListView(
-                          shrinkWrap: true,
-                          children: buttons.map(buildButton).toList(),
-                        ),
+        body: SingleChildScrollView(
+          child: StreamBuilder(
+              stream: readButtons(),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return const Center(
+                    child: Text(
+                      'Erro na obtenção de dados :(',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
-                  ),
-                );
-              } else {
-                return const Center(child: CircularProgressIndicator());
-              }
-            })
+                    ),
+                  );
+                } else if (snapshot.hasData) {
+                  final buttons = snapshot.data!;
+                  return Center(
+                    child: Column(
+                      children: [
+                        const CustomProfile(),
+                        SizedBox(
+                          width: larguraResponsiva,
+                          child: ListView(
+                            shrinkWrap: true,
+                            children: buttons.map(buildButton).toList(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                } else {
+                  return const Center(child: CircularProgressIndicator());
+                }
+              }),
+        )
     );
   }
 
@@ -91,7 +93,7 @@ class _HomePageState extends State<HomePage> {
               throw 'Não foi possivel iniciar $url';
             }
           },
-          left: 10, top: 20, right: 10, bottom: 20,
+          left: 10, top: 22, right: 10, bottom: 22,
           src: 'https://firebasestorage.googleapis.com/v0/b/dlsublimarte-linkrapido.appspot.com/o/images%2F${button.title}-${button.image}?alt=media',
         )
     ),
