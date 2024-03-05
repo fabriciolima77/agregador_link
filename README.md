@@ -21,7 +21,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Dart](https://dart.dev/)
 - [Flutter](https://flutter.dev/)
 - [Firebase](https://firebase.google.com/)
-- [intl_phone_field](https://pub.dev/packages/intl_phone_field)
 - [firebase_core](https://pub.dev/packages/firebase_core)
 - [firebase_auth](https://pub.dev/packages/firebase_auth)
 - [cloud_firestore](https://pub.dev/packages/cloud_firestore)
