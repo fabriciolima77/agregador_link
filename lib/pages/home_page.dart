@@ -49,6 +49,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
+                        color: Colors.white
                       ),
                     ),
                   );
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                   return Center(
                     child: Column(
                       children: [
-                        const CustomProfile(),
+                        const CustomProfile(isVisible: true,),
                         SizedBox(
                           width: larguraResponsiva,
                           child: ListView(

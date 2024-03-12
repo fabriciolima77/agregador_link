@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const CustomProfile(),
+              const CustomProfile(isVisible: true,),
               const SizedBox(height: 34),
               const Text(
                   'Entre com seus dados para acessar o painel de edição',
